@@ -91,7 +91,7 @@ with st.form("prediction_form"):
     with col1:
         nombre = st.text_input('Nombre', '')
         edad = st.selectbox('Edad', ['0 -18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+'])
-        genero = st.selectbox('Genero', ['Masculino', 'Femenino', 'Otros'])
+        genero = st.selectbox('Género', ['Masculino', 'Femenino', 'Otros'])
 
     with col2:
         dispositivos = st.selectbox('¿Con qué dispositivos tecnológicos te conectas regularmente?', 
@@ -145,4 +145,5 @@ with st.form("prediction_form"):
             st.success(f"El nivel de apropiación TIC predicho para {nombre} es: **{prediction[0]}**")
         else:
             st.error("No se pudo realizar la predicción. Por favor, verifica los datos de entrada o la disponibilidad del modelo.")
+
 
