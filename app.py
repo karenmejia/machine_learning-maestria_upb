@@ -81,8 +81,7 @@ def predict_new_data(new_raw_df, model_path='best_logistic_regression_model.jobl
 
 
 # Streamlit App Interface
-st.title('Predicción de Nivel de Apropiación TIC')
-st.markdown("--- Jardell C.")
+st.title('Predicción de nivel de apropiación TIC para la comunidad de Puerto Gaitan')
 
 st.header('Introduce los datos del individuo para predecir su nivel TIC')
 
@@ -90,7 +89,7 @@ with st.form("prediction_form"):
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        nombre = st.text_input('Nombre', 'Juan Perez')
+        nombre = st.text_input('Nombre', '')
         edad = st.selectbox('Edad', ['0 -18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+'])
         genero = st.selectbox('Genero', ['Masculino', 'Femenino', 'Otros'])
 
@@ -146,3 +145,4 @@ with st.form("prediction_form"):
             st.success(f"El nivel de apropiación TIC predicho para {nombre} es: **{prediction[0]}**")
         else:
             st.error("No se pudo realizar la predicción. Por favor, verifica los datos de entrada o la disponibilidad del modelo.")
+
