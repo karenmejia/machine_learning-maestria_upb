@@ -116,7 +116,7 @@ with st.form("prediction_form"):
         grupo_poblacional = st.selectbox('¿A qué grupo poblacional perteneces?', 
                                           ['Ninguno', 'Indígena', 'Afrocolombiana', 'Campesino', 'Raizal', 'Rom (gitanos)'])
 
-    submitted = st.form_submit_button('Predecir nivel de habilidad para utilizar TIC')
+    submitted = st.form_submit_button('Predecir nivel de percepción de habilidad para utilizar TIC')
 
     if submitted:
         # Create a dictionary from user inputs
@@ -142,8 +142,9 @@ with st.form("prediction_form"):
         prediction = predict_new_data(user_df)
 
         if prediction is not None:
-            st.success(f"El nivel de apropiación TIC predicho para {nombre} es: **{prediction[0]}**")
+            st.success(f"El nivel de percepción de apropiación TIC predicho para {nombre} es: **{prediction[0]}**")
         else:
             st.error("No se pudo realizar la predicción. Por favor, verifica los datos de entrada o la disponibilidad del modelo.")
+
 
 
